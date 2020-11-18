@@ -47,6 +47,24 @@ public class Ui {
 //
 //        }
     }
+    class MyPanel extends JPanel{
+        Image image= null;
+        public void paint(Graphics g){
+            try {
+                System.out.println("to write");
+                image= ImageIO.read(new File("e.png" ));
+                BufferedImage image2= ImageIO.read(new File("e.png" ));
+                int a=image2.getWidth();
+                int b=image2.getHeight();
+                g.drawImage(image,   0  , 0 , a,b  ,null );
+            }
+            catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+                System.out.println("no write");
+            }
+        }
+    }
 }
 
 
@@ -67,23 +85,6 @@ public class Ui {
 
 
 
-class MyPanel extends JPanel{
-    Image image= null;
-    public void paint(Graphics g){
-        try {
-            System.out.println("to write");
-            image= ImageIO.read(new File("e.png" ));
-            BufferedImage image2= ImageIO.read(new File("e.png" ));
-            int a=image2.getWidth();
-            int b=image2.getHeight();
-            g.drawImage(image,   0  , 0 , a,b  ,null );
-        }
-        catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            System.out.println("no write");
-        }
-    }
-}
+
 
 
